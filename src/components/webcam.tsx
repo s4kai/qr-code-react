@@ -209,7 +209,9 @@ const WebcamCapture = () => {
 
             alert(barcodes[0].rawValue);
           }
-        } catch (error) {}
+        } catch (error) {
+          console.error("Error detecting barcode", error);
+        }
       }
     }
   };
