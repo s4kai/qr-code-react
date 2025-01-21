@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { useAlert } from "@/context/AlertProvider";
 import signIn from "@/firebase/auth/signIn";
-import { FirebaseError } from "firebase/app";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
@@ -15,23 +14,15 @@ const SignIn = () => {
 
   const handleForm = async (event: FormEvent) => {
     event.preventDefault();
+
     try {
-      const { result, error } = await signIn(email, password);
+      const result = await signIn(email, password);
 
-      if (error) {
-        const firebaseError = error as FirebaseError;
-
-        if (firebaseError.message) {
-          throw new Error(firebaseError.message);
-        }
+      if (result.user) {
+        return router.push("/");
       }
-
-      showAlert("Login realizado com sucesso", "success");
-      return router.push("/");
     } catch (error) {
-      if (error instanceof FirebaseError) {
-        showAlert("Erro ao logar", "error");
-      }
+      showAlert("Usuario ou senha incorretos", "error");
     }
   };
 
