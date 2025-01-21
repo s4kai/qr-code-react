@@ -13,13 +13,12 @@ export const getBackCamera = async (): Promise<string | null> => {
 };
 
 export const startWebcam = async (
-  deviceId: string,
   videoRef: React.RefObject<HTMLVideoElement | null>
 ) => {
   if (!videoRef?.current) return;
 
   const stream = await navigator.mediaDevices.getUserMedia({
-    video: { deviceId: { exact: deviceId } },
+    video: { facingMode: "environment" },
   });
 
   if (videoRef.current) {

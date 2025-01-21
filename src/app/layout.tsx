@@ -1,3 +1,5 @@
+import { AlertProvider } from "@/context/AlertProvider";
+import { AuthContextProvider } from "@/context/AuthProvider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -27,11 +29,10 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, user-scalable=no" />
       </head>
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body>
+        <AuthContextProvider>
+          <AlertProvider>{children}</AlertProvider>
+        </AuthContextProvider>
       </body>
     </html>
   );
