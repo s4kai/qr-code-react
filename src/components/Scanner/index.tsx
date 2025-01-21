@@ -9,7 +9,7 @@ import {
 
 import { BarcodeDetector } from "barcode-detector";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   QRCodeScanner,
   ScannerBackgroundContainer,
@@ -37,10 +37,22 @@ const Scanner = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [mediaStream, setMediaStream] = useState<MediaStream | null>(null);
-  const [qrCode, setQrCode] = useState<string | null>(null);
+  const [qrCode] = useState<string | null>(null);
   const [isFlashlightOn, setIsFlashlightOn] = useState(false);
 
-  const scanQRCode = async () => {
+  const initWebcam = useCallback(async () => {
+    try {
+      const deviceId = await getBackCamera();
+      if (deviceId) {
+        const stream = await startWebcam(deviceId, videoRef);
+        if (stream) setMediaStream(stream);
+      }
+    } catch {
+      onCameraNotFound("Camera not found");
+    }
+  }, [videoRef, setMediaStream, onCameraNotFound]);
+
+  const scanQRCode = useCallback(async () => {
     if (!videoRef.current || !canvasRef.current) return;
 
     const video = videoRef.current;
@@ -63,20 +75,7 @@ const Scanner = ({
         stopWebcam(mediaStream, setMediaStream);
       }
     }
-  };
-
-  const initWebcam = async () => {
-    try {
-      const deviceId = await getBackCamera();
-      if (deviceId) {
-        const stream = await startWebcam(deviceId, videoRef);
-
-        if (stream) setMediaStream(stream);
-      }
-    } catch (error) {
-      onCameraNotFound("Camera not found");
-    }
-  };
+  }, [videoRef, canvasRef, mediaStream, setMediaStream, onDetected]);
 
   useEffect(() => {
     initWebcam();
@@ -86,7 +85,7 @@ const Scanner = ({
       clearInterval(interval);
       stopWebcam(mediaStream, setMediaStream);
     };
-  }, [qrCode, delay]);
+  }, [qrCode, delay, initWebcam, scanQRCode, mediaStream, setMediaStream]);
 
   return (
     <div style={{ minHeight: "100vh" }}>

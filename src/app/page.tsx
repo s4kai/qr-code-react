@@ -1,14 +1,16 @@
 import Link from "next/link";
 
 type HomeProps = {
-  searchParams: {
+  searchParams: Promise<{
     qrcode: string | null;
     error: string | null;
-  };
+  }>;
 };
 
-export default function Home(props: HomeProps) {
-  if (props.searchParams?.error) {
+export default async function Home({ searchParams }: HomeProps) {
+  const params = await searchParams;
+
+  if (params?.error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
         <h3>O dispositivo não possui câmera.</h3>
@@ -48,7 +50,7 @@ export default function Home(props: HomeProps) {
             type="text"
             id="notaFiscal"
             name="notaFiscal"
-            defaultValue={props.searchParams?.qrcode || ""}
+            defaultValue={params?.qrcode || ""}
             placeholder="Digite o número da nota fiscal"
             className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />

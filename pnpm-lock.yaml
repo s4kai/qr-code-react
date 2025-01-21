@@ -8,30 +8,21 @@ importers:
 
   .:
     dependencies:
-      '@yudiel/react-qr-scanner':
-        specifier: ^2.1.0
-        version: 2.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      add:
-        specifier: ^2.0.6
-        version: 2.0.6
+      barcode-detector:
+        specifier: ^2.3.1
+        version: 2.3.1
       jsqr:
         specifier: ^1.4.0
         version: 1.4.0
       next:
         specifier: 15.1.5
         version: 15.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      qr-scanner:
-        specifier: ^1.4.2
-        version: 1.4.2
       react:
         specifier: ^19.0.0
         version: 19.0.0
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
-      react-qr-reader:
-        specifier: 3.0.0-beta-1
-        version: 3.0.0-beta-1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       styled-components:
         specifier: ^6.1.14
         version: 6.1.14(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -367,9 +358,6 @@ packages:
   '@types/node@20.17.14':
     resolution: {integrity: sha512-w6qdYetNL5KRBiSClK/KWai+2IMEJuAj+EujKCumalFOwXtvOXaEan9AuwcRID2IcOIAWSIfR495hBtgKlx2zg==}
 
-  '@types/offscreencanvas@2019.7.3':
-    resolution: {integrity: sha512-ieXiYmgSRXUDeOntE1InxjWyvEelZGP63M+cGuquuRLuIKKT1osnkXjxev9B7d1nXSug5vpunx+gNlbVxMlC9A==}
-
   '@types/react-dom@19.0.3':
     resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
     peerDependencies:
@@ -428,24 +416,6 @@ packages:
     resolution: {integrity: sha512-v/BpkeeYAsPkKCkR8BDwcno0llhzWVqPOamQrAEMdpZav2Y9OVjd9dwJyBLJWwf335B5DmlifECIkZRJCaGaHA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@yudiel/react-qr-scanner@2.1.0':
-    resolution: {integrity: sha512-O3832Qk8YU+vnLO+tsJalfQcXRZ1pOB9l6WrI3OdwpxkQEzukpT48M6Hc2vUUe1rFE6qapQnV3RGRFNM0S7CHw==}
-    peerDependencies:
-      react: ^17 || ^18 || ^19
-      react-dom: ^17 || ^18 || ^19
-
-  '@zxing/browser@0.0.7':
-    resolution: {integrity: sha512-AepzMgDnD6EjxewqmXpHJsi4S3Gw9ilZJLIbTf6fWuWySEcHBodnGu3p7FWlgq1Sd5QyfPhTum5z3CBkkhMVng==}
-    peerDependencies:
-      '@zxing/library': ^0.18.3
-
-  '@zxing/library@0.18.6':
-    resolution: {integrity: sha512-bulZ9JHoLFd9W36pi+7e7DnEYNJhljYjZ1UTsKPOoLMU3qtC+REHITeCRNx40zTRJZx18W5TBRXt5pq2Uopjsw==}
-    engines: {node: '>= 10.4.0'}
-
-  '@zxing/text-encoding@0.9.0':
-    resolution: {integrity: sha512-U/4aVJ2mxI0aDNI8Uq0wEhMgY+u4CNtEb0om3+y3+niDAsoTCOB33UF0sxpzqzdqXLqmvc+vZyAt4O8pPdfkwA==}
-
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -455,9 +425,6 @@ packages:
     resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-
-  add@2.0.6:
-    resolution: {integrity: sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==}
 
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -1424,9 +1391,6 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
-  qr-scanner@1.4.2:
-    resolution: {integrity: sha512-kV1yQUe2FENvn59tMZW6mOVfpq9mGxGf8l6+EGaXUOd4RBOLg7tRC83OrirM5AtDvZRpdjdlXURsHreAOSPOUw==}
-
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -1437,12 +1401,6 @@ packages:
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-
-  react-qr-reader@3.0.0-beta-1:
-    resolution: {integrity: sha512-5HeFH9x/BlziRYQYGK2AeWS9WiKYZtGGMs9DXy3bcySTX3C9UJL9EwcPnWw8vlf7JP4FcrAlr1SnZ5nsWLQGyw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0
-      react-dom: ^16.8.0 || ^17.0.0
 
   react@19.0.0:
     resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
@@ -1483,11 +1441,6 @@ packages:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
-  rollup@2.79.2:
-    resolution: {integrity: sha512-fS6iqSPZDs3dr/y7Od6y5nha8dW1YnbgtsyotCVvoFGKbERG++CVRFv1meyGDE1SNItQA8BrnCw7ScdAhRJ3XQ==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
@@ -1505,9 +1458,6 @@ packages:
 
   scheduler@0.25.0:
     resolution: {integrity: sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==}
-
-  sdp@3.2.0:
-    resolution: {integrity: sha512-d7wDPgDV3DDiqulJjKiV2865wKsJ34YI+NDREbm+FySq6WuKOikwyNQcm+doLAZ1O6ltdO0SeKle2xMpN3Brgw==}
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -1688,10 +1638,6 @@ packages:
     peerDependencies:
       typescript: '>=4.8.4'
 
-  ts-custom-error@3.3.1:
-    resolution: {integrity: sha512-5OX1tzOjxWEgsr/YEUWSuPrQ00deKLh6D7OTWcvNHm12/7QPyRh8SYpyWvA4IZv8H/+GQWQEh/kwo95Q9OVW1A==}
-    engines: {node: '>=14.0.0'}
-
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
@@ -1741,10 +1687,6 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-
-  webrtc-adapter@9.0.1:
-    resolution: {integrity: sha512-1AQO+d4ElfVSXyzNVTOewgGT/tAomwwztX/6e3totvyyzXPvXIIuUUjAmyZGbKBKbZOXauuJooZm3g6IuFuiNQ==}
-    engines: {node: '>=6.0.0', npm: '>=3.10.0'}
 
   which-boxed-primitive@1.1.1:
     resolution: {integrity: sha512-TbX3mj8n0odCBFVlY8AxkqcHASw3L60jIuF8jFP78az3C2YhmGvqbHBpAjTRH2/xqYunrJ9g1jSyjCjpoWzIAA==}
@@ -2035,8 +1977,6 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@types/offscreencanvas@2019.7.3': {}
-
   '@types/react-dom@19.0.3(@types/react@19.0.7)':
     dependencies:
       '@types/react': 19.0.7
@@ -2124,35 +2064,11 @@ snapshots:
       '@typescript-eslint/types': 8.20.0
       eslint-visitor-keys: 4.2.0
 
-  '@yudiel/react-qr-scanner@2.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      barcode-detector: 2.3.1
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      webrtc-adapter: 9.0.1
-
-  '@zxing/browser@0.0.7(@zxing/library@0.18.6)':
-    dependencies:
-      '@zxing/library': 0.18.6
-    optionalDependencies:
-      '@zxing/text-encoding': 0.9.0
-
-  '@zxing/library@0.18.6':
-    dependencies:
-      ts-custom-error: 3.3.1
-    optionalDependencies:
-      '@zxing/text-encoding': 0.9.0
-
-  '@zxing/text-encoding@0.9.0':
-    optional: true
-
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
       acorn: 8.14.0
 
   acorn@8.14.0: {}
-
-  add@2.0.6: {}
 
   ajv@6.12.6:
     dependencies:
@@ -3307,10 +3223,6 @@ snapshots:
 
   punycode@2.3.1: {}
 
-  qr-scanner@1.4.2:
-    dependencies:
-      '@types/offscreencanvas': 2019.7.3
-
   queue-microtask@1.2.3: {}
 
   react-dom@19.0.0(react@19.0.0):
@@ -3319,14 +3231,6 @@ snapshots:
       scheduler: 0.25.0
 
   react-is@16.13.1: {}
-
-  react-qr-reader@3.0.0-beta-1(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
-    dependencies:
-      '@zxing/browser': 0.0.7(@zxing/library@0.18.6)
-      '@zxing/library': 0.18.6
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-      rollup: 2.79.2
 
   react@19.0.0: {}
 
@@ -3376,10 +3280,6 @@ snapshots:
 
   reusify@1.0.4: {}
 
-  rollup@2.79.2:
-    optionalDependencies:
-      fsevents: 2.3.3
-
   run-parallel@1.2.0:
     dependencies:
       queue-microtask: 1.2.3
@@ -3404,8 +3304,6 @@ snapshots:
       is-regex: 1.2.1
 
   scheduler@0.25.0: {}
-
-  sdp@3.2.0: {}
 
   semver@6.3.1: {}
 
@@ -3665,8 +3563,6 @@ snapshots:
     dependencies:
       typescript: 5.7.3
 
-  ts-custom-error@3.3.1: {}
-
   ts-interface-checker@0.1.13: {}
 
   tsconfig-paths@3.15.0:
@@ -3733,10 +3629,6 @@ snapshots:
       punycode: 2.3.1
 
   util-deprecate@1.0.2: {}
-
-  webrtc-adapter@9.0.1:
-    dependencies:
-      sdp: 3.2.0
 
   which-boxed-primitive@1.1.1:
     dependencies:
