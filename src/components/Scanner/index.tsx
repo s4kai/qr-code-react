@@ -40,6 +40,12 @@ const Scanner = ({
   const [qrCode] = useState<string | null>(null);
   const [isFlashlightOn, setIsFlashlightOn] = useState(false);
 
+  if (
+    !("mediaDevices" in navigator && "getUserMedia" in navigator.mediaDevices)
+  ) {
+    onCameraNotFound("Camera not found");
+  }
+
   const initWebcam = useCallback(async () => {
     try {
       const deviceId = await getBackCamera();
@@ -78,7 +84,7 @@ const Scanner = ({
   }, [videoRef, canvasRef, mediaStream, setMediaStream, onDetected]);
 
   useEffect(() => {
-    initWebcam();
+    initWebcam().then(() => {});
     const interval = setInterval(scanQRCode, delay);
 
     return () => {
