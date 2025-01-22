@@ -23,7 +23,7 @@ const Alert: React.FC<AlertProps> = ({ message, type, isOpen, onClose }) => {
   return (
     <div
       className={cn(
-        "fixed top-5 left-1/2 transform -translate-x-1/2 p-4 rounded-md shadow-lg flex items-center space-x-4",
+        "fixed top-5 left-1/2 transform -translate-x-1/2 p-4 rounded-md shadow-lg flex items-center space-x-4 z-50",
         alertStyles[type]
       )}
     >

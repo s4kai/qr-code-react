@@ -26,7 +26,7 @@ export default function LoggedLayout({
 
   return (
     <div className="flex flex-col w-[100vw] justify-center items-center h-full">
-      <nav className="flex justify-center items-center bg-gray-800 text-white shadow-md w-full fixed top-0 z-50">
+      <nav className="flex justify-center items-center bg-gray-800 text-white shadow-md w-full fixed top-0 z-40">
         <div className="flex justify-between items-center p-4 w-full max-w-[1900px]">
           <div className="text-2xl font-bold">Logo</div>
 

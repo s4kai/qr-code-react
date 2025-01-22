@@ -11,14 +11,10 @@ export const cadastrarNotaFiscal = async (notaFiscalData: {
 }) => {
   try {
     const chave = notaFiscalData.notaFiscal.trim().slice(0, 44);
-
     const user = auth.currentUser;
     //Verifica se a nota e valida
     const validRefNota = collection(db, "notas_validas");
-    const validQueryNota = query(
-      validRefNota,
-      where("chave_nota", "==", chave)
-    );
+    const validQueryNota = query(validRefNota, where("chave", "==", chave));
 
     const validSnapshot = await getDocs(validQueryNota);
 
@@ -61,7 +57,6 @@ export const cadastrarNotaFiscal = async (notaFiscalData: {
     if (e instanceof Error && e.message === "Nota fiscal já cadastrada.") {
       throw new Error("Nota fiscal já cadastrada.");
     }
-
     throw new Error("Erro ao cadastrar a nota fiscal.");
   }
 };
