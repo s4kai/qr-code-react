@@ -2,18 +2,17 @@
 
 import Scanner from "@/components/Scanner";
 import { useRouter } from "next/navigation";
-import { useCallback } from "react";
 
 const QRCodePage = () => {
   const router = useRouter();
 
-  const sendBackWithError = useCallback(() => {
+  const sendBackWithError = () => {
     try {
       router.replace("/nota-fiscal?error=camera_not_found");
     } catch (e) {
       console.error(e);
     }
-  }, [router]);
+  };
 
   return (
     <Scanner

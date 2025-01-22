@@ -26,7 +26,7 @@ export default function LoggedLayout({
 
   return (
     <div className="flex flex-col w-[100vw] justify-center items-center h-full">
-      <nav className="flex justify-center items-center bg-gray-800 text-white shadow-md w-full h-90">
+      <nav className="flex justify-center items-center bg-gray-800 text-white shadow-md w-full fixed top-0 z-50">
         <div className="flex justify-between items-center p-4 w-full max-w-[1900px]">
           <div className="text-2xl font-bold">Logo</div>
 
@@ -35,7 +35,7 @@ export default function LoggedLayout({
               <span className="">Notas</span>
             </Link>
 
-            <Link href="/">
+            <Link href="/numbers">
               <span className="">Numeros</span>
             </Link>
           </div>
@@ -45,7 +45,7 @@ export default function LoggedLayout({
           </Button>
         </div>
       </nav>
-      <main className="h-full flex flex-col justify-center items-center w-full">
+      <main className="h-full flex flex-col justify-center items-center w-full pt-10">
         {children}
       </main>
     </div>

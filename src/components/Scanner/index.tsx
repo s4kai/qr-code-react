@@ -1,6 +1,6 @@
 "use client";
 
-import { startWebcam, stopWebcam, toggleFlashlight } from "@/utils/media";
+import { startWebcam, stopWebcam } from "@/utils/media";
 
 import { BarcodeDetector } from "barcode-detector";
 
@@ -33,7 +33,6 @@ const Scanner = ({
 
   const [mediaStream, setMediaStream] = useState<MediaStream | null>(null);
   const [qrCode] = useState<string | null>(null);
-  const [isFlashlightOn, setIsFlashlightOn] = useState(false);
 
   if (
     !("mediaDevices" in navigator && "getUserMedia" in navigator.mediaDevices)
@@ -92,13 +91,6 @@ const Scanner = ({
         <ScannerBackgroundContainer>
           <QRCodeScanner />
           <ScannerFooter>
-            <ScannerButton
-              onClick={() =>
-                toggleFlashlight(mediaStream, isFlashlightOn, setIsFlashlightOn)
-              }
-            >
-              {isFlashlightOn ? "Desligar Flashlight" : "Ligar Flashlight"}
-            </ScannerButton>
             <ScannerButton onClick={onManualInput}>Digitar</ScannerButton>
           </ScannerFooter>
         </ScannerBackgroundContainer>

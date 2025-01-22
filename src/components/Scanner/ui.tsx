@@ -3,29 +3,10 @@ import styled from "styled-components";
 export const ScannerContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   max-width: 100%;
   margin: 0 auto;
-
-  @media (max-width: 600px) {
-    max-width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 600px) and (orientation: landscape) {
-    max-width: 100%;
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 768px) and (orientation: landscape) {
-    max-width: 100%;
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-  }
+  overflow-y: hidden;
 `;
 
 export const WebcamVideo = styled.video`
@@ -51,7 +32,6 @@ export const ScannerBackgroundContainer = styled.div`
   box-sizing: border-box;
 
   @media (min-width: 768px) and (orientation: landscape) {
-    top: -5%;
     flex-direction: row;
   }
 `;
@@ -60,8 +40,6 @@ export const QRCodeScanner = styled.div`
   position: relative;
   width: calc(100vw - 80px);
   aspect-ratio: 1/1;
-
-  top: -5%;
 
   border: 4px solid #1a97df;
   border-radius: 10px;
